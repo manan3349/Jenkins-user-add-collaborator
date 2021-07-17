@@ -10,7 +10,7 @@ pipeline {
     }
     stages {
         //Downloads the code from GitHub.
-        stage('GitHub code Download') {
+        stage('Build') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'bffa42dc-029f-40dd-835f-79b0f0d92d01', passwordVariable: 'token', usernameVariable: 'authd')]) {
                 sh 'sudo curl -H "Authorization: token $token" -H "Accept: application/vnd.github.v3.raw" -o Github_access.py https://raw.githubusercontent.com/To-TheNew/Script/main/Github_access.py'
@@ -18,7 +18,7 @@ pipeline {
         }
     }
         // Add collaborator in github.
-        stage('Python Code') {
+        stage('Deploy') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'bffa42dc-029f-40dd-835f-79b0f0d92d01', passwordVariable: 'token', usernameVariable: 'authd')]) {
                     sh 'python3 Github_access.py $token ${ORG_NAME} ${access_type} ${USER_NAME}'
