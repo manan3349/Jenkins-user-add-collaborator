@@ -28,8 +28,8 @@ This pipeline will add any user as a Collaborator in Github organization account
 - Copy the Pipeline code in your Jenkins job.
 - Set the credentials of GitHub in Jenkins.
 - Replace the `withCredentials` block with your own credentials.
-- Put Github_access.py in your GitHub account whose credentials you setted up in Jenkins by this, Jenkins will download the code first in the server.
-- Deploy stage will run the python code and add user as a GitHub collaborator.
+- Put Github_access.py in your GitHub account whose credentials you setted up in Jenkins, by this Jenkins will download the code first in the server.
+- Deploy stage will run the python code and send request to add user as a GitHub collaborator.
 
 ### Further Reference and Contact 
 ##### Feel free to Contact for any issue!!
